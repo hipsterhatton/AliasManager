@@ -4,6 +4,7 @@ Custom Terminal Alias Manager (Al.Ma.)
 # Usage
 - Simple way to add / delete / edit custom terminal alias in *~/.bash_profile*
 - Can be used to sync terminal alias between various devices, projects, etc.
+- Creates a backup of *~/.bash_profile* called *~/.backup_bash_profile* each time it runs
 
 # Setup
 ## Format

@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require "FileUtils"
 
 kVERSION = 				"1.0"
 kAUTHOR = 				"Stephen Hatton"
@@ -13,6 +14,7 @@ kFILE_END_MESSAGE = 	"### Alias Import End"
 
 kALIAS_IMPORT_FILE = 	"Alias.csv"
 kALIAS_WRITE_FILE = 	"~/.bash_profile"
+kALIAS_BACKUP_FILE = 	"~/.backup_bash_profile"
 
 
 def _colorize(text, color_code)
@@ -65,12 +67,13 @@ def read_existing_alias(write_file, start_message, end_message)
 	end	
 end
 
-def write_alias_to_file(write_file, start_message, end_message, existing_file_content, alias_to_write)
+def write_alias_to_file(write_file, start_message, end_message, existing_file_content, alias_to_write, backup_file)
 
 	write_file = File.expand_path(write_file)
+	backup_file = File.expand_path(backup_file)
 
-	# Delete the old file
-	File.delete(write_file)
+    # Make a copy of ~/.bash_profile, just in case!
+	File.rename(write_file, backup_file)
 
 	# Create the new one :: write all this now!
 	begin
@@ -103,7 +106,7 @@ alias_to_write = create_alias(kALIAS_IMPORT_FILE)
 file_content = read_existing_alias(kALIAS_WRITE_FILE, kFILE_START_MESSAGE, kFILE_END_MESSAGE)
 
 # Write Alias To File
-write_alias_to_file(kALIAS_WRITE_FILE, kFILE_START_MESSAGE, kFILE_END_MESSAGE, file_content, alias_to_write)
+write_alias_to_file(kALIAS_WRITE_FILE, kFILE_START_MESSAGE, kFILE_END_MESSAGE, file_content, alias_to_write, kALIAS_BACKUP_FILE)
 
 # Print End Message
 puts _colorize(alias_to_write.count > 0 ? kENDING_MSG : kBLANK_MSG, 32)
