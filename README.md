@@ -1,4 +1,4 @@
-# AliasManager v0.1
+# AliasManager v0.2
 Custom Terminal Alias Manager (Al.Ma.)
 
 # Usage
@@ -36,6 +36,10 @@ Al.Ma. then reads through *alias.csv*, and either:
 
 # Requires:
 Ruby
+
+# v0.2 Changes
+- Prints out list of aliases added / removed
+- Refactoring of code
 
 # License
 Copyright (c) 2015, Stephen Hatton
