@@ -11,7 +11,7 @@ kBLANK_MSG = 			"...Alias File Was Empty\n"
 kFILE_START_MESSAGE = 	"### Alias Imported by AliasManager: https://github.com/hipsterhatton/AliasManager"
 kFILE_END_MESSAGE = 	"### Alias Import End"
 
-kALIAS_IMPORT_FILE = 	"Alias.txt"
+kALIAS_IMPORT_FILE = 	"Alias.csv"
 kALIAS_WRITE_FILE = 	"~/.bash_profile"
 
 
