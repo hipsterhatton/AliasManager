@@ -1,0 +1,3 @@
+runO, printf "\e]1;Oliver Server\a" && cd ~/Desktop/oliver && bundle exec rails s
+runVA, printf "\e]1;Volc Apps Server\a" && cd ~/Desktop/volcanic-apps && bundle exec rails s -p 3001
+edit, open -a "Sublime Text 2.app" "$1"
